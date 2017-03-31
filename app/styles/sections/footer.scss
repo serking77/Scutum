@@ -1,0 +1,74 @@
+.footer {
+    .container {
+        @extend %clearfix;
+    }
+}
+
+.footer {
+    background: $heders-footer;
+    height: 50px;
+    position: relative;
+}
+
+.footer__left,
+.footer__right {
+    float: left;
+    width: 50%;
+}
+
+.footer__right {
+    float: right;
+    width: 50%;
+}
+
+.copyright {
+    @include fira(light);
+    font-size: 14px;
+    color: #9c9c9c;
+    line-height: 50px;
+}
+
+.socials {
+    font-size: 0;
+    text-align: right;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.socials__item {
+    display: inline-block;
+}
+
+.socials__link {
+   // margin-top: 50px;
+    width: 34px;
+    height: 34px;
+    display: block;
+    background-image: url('/img/icons/sprite.png');
+    background-repeat: no-repeat;
+
+}
+
+
+.socials__link_fb {
+    background-position: 0px 0;
+    margin-right: 7px;
+    &:hover {
+        background-position: -35px 0;
+    }
+}
+
+.socials__link_vk {
+    background-position: -70px 0;
+    margin-right: 7px;
+    &:hover {
+        background-position: -105px 0;
+    }
+}
+
+.socials__link_tw {
+    background-position: -140px 0;
+    &:hover {
+        background-position: -175px 0;
+    }
+}

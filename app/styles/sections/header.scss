@@ -1,0 +1,153 @@
+.header {
+    .container {
+        @extend %clearfix;
+    }
+}
+
+.header {
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 1px 3px 0 rgba(#000, .5);
+    @extend %clearfix;
+    @include fira(bold);
+    margin-bottom: 30px;
+}
+
+.header__left,
+.header__right {
+    float: left;
+    width: 50%;
+}
+
+.header__left {
+    height: 64px;
+    padding: 8px 0;
+}
+
+.header__right {
+    text-align: right;
+}
+
+.user__avatar {
+    @include inlineblock(middle);
+    height: 60px;
+    width: 60px;
+    background-image: url('/img/content/user__avatar.jpg');
+    border-radius: 50%;
+    border: 2px solid #bfbfbf;
+}
+
+.user__name {
+    @include fira();
+    @include inlineblock(middle);
+    padding-left: 20px;
+}
+
+.contacts {
+    text-align: right;
+    @extend %clearfix;
+    position: relative;
+    &:hover {
+        .contacts__dropdown {
+            left: 55.32%;
+            opacity: 1;
+        }
+    }
+}
+
+.contacts__link {
+    color: $blue-btn;
+    text-decoration: none;
+    font-size: 18px;
+    background: url('/img/decor/dot.png') 0 bottom repeat-x;
+    line-height: 80px;
+}
+
+.contacts__dropdown {
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #dedede;
+    @include fira(light);
+    font-size: 18px;
+    text-align: left;
+    position: absolute;
+    //left: 55.32%;
+    left: -9999px;
+    top: 93.75%;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity .5s;
+    &:before {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 77px;
+        top: -63px;
+    }
+}
+
+.contacts__dropdown-item {
+    border-bottom: 1px solid #dedede;
+    vertical-align: middle;
+    display: block;
+    width: 254px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 20px;
+}
+
+.contacts__dropdown-item-a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: #414141;
+}
+
+.contacts__dropdown-item-a::before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    padding-right: 9px;
+    color: $blue-btn;
+}
+
+.contacts__dropdown-item-a_mail:before {
+    content: "\f0e0";
+}
+
+.contacts__dropdown-item-a_tel:before {
+    content: "\f095";
+}
+
+.contacts__dropdown-item-a_skype:before {
+    content: "\f17e";
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top: 0;
+    border-bottom-color: #dedede;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -20px;
+
+    &::after {
+        content: "";
+        display: block;
+        border: 20px solid transparent;
+        border-top: 0;
+        border-bottom-color: white;
+        position: absolute;
+        top: 1px;
+        left: -20px;
+    }
+}
