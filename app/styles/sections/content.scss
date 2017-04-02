@@ -49,6 +49,14 @@
 .nav__link_briefcase:before {
     content: "\f0b1";
 }
+.nav__link_pensil:before {
+    content: "\f040";
+}
+
+.nav__link_book:before {
+  content: "\f02d";
+}
+
 
 .about {
     @extend %clearfix;
@@ -88,7 +96,7 @@
 
 .about__desc {
     margin-bottom: 50px;
-    max-height: 405px;
+    max-height: 500px;
     overflow: hidden;
     p {
         @include fira(light);
@@ -96,7 +104,8 @@
         font-size: 18px;
         color: $col-p;
         margin-top: 0;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
+        text-indent: 20px;
     }
     h2 {}
     h3 {}
@@ -104,7 +113,6 @@
 
 .about__btns {
     text-align: right;
-    margin-bottom: 106px;
 }
 
 .btn {
@@ -182,7 +190,6 @@
 .career__list {
     @include fira(light);
     font-size: 18px;
-    max-height: 500px;
     &:first-child {
         .career__block {
             &:before {
@@ -280,9 +287,72 @@
     }
 }
 
+.career__sert {
+    padding-top: 20px;
+}
+
+.career__header {
+    @include fira();
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.career__sert-item-a {
+    font-family: 'FontAwesome';
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 0px 10px 10px;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+    color: $heders-footer;
+    &:hover {
+        color: $blue-btn;
+    }
+}
+
+.career__sert-item-a_school {
+    font-size: 14px;
+    display: inline-block;
+    padding: 0;
+    line-height: 16px;
+    text-align: none;
+    text-decoration: underline;
+    color: $heders-footer;
+    &:hover {
+        color: $blue-btn;
+    }   
+}
+
+
+
+
+
+
+.career__sert-item-text {
+    //background: $blue-btn;
+    @include fira();
+    font-size: 16px;
+    padding: 5px;
+}
+
+.career__sert-item-text_school {
+    //background: $blue-btn;
+    @include fira();
+    font-size: 12px;
+    padding: 0px;
+}
+
+.career__sert-item-a_sert:before {
+    content: "\f0a3";
+    font-family: 'FontAwesome';
+}
+
+
+
 .portfolio {
     font-size: 0;
-    max-height: 580px;
 }
 
 .portfolio__item {
@@ -334,7 +404,15 @@
 
 .portfolio__item-desc-div-icon,
 .portfolio__item-desc-div-text {
-    @include inlineblock(middle) color: #aeaeae;
+    @include inlineblock(middle);
+     color: #aeaeae;
+}
+
+.title-portfolio-year {
+    @include fira();
+    font-size: 21px;
+    color: $heders-footer;
+    margin-bottom: 5px;
 }
 
 .wrapper_auth {
@@ -411,48 +489,182 @@
     padding-top: 20px;
 }
 
-    /* 
 
-.hello__photo {
-    background: transparent;
-    width: 300px;
-    height: 140px;
-    position: absolute;
-    z-index: 50;
+.blog-item {
+    background: #e9e8e8;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    //width: 700px;
+    margin-bottom: 20px;
 }
 
-.hello__div-desc {
-    width: 300px;
-    height: 232px;
-    background-color: #fff;
-    position: absolute;
-    top: 302px-232;
-    border-radius: 12px;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
-}
-
-.hello__photo-img {
-    height: 140px;
-    width: 140px;
-    background-image: url('/img/logo-hello.png');
-    border-radius: 50%;
-    border: 2px solid #bebebe;
-    margin: 0 auto;
-}
-
-.hello__div-desc-name {
-    margin-top: 85px;
-    @include fira(bold);
+.blog-item__title {
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-bottom: 0;
     font-size: 21px;
-    text-align: center;
-    margin-bottom: 11px;
+    @include fira();
 }
 
-.hello__div-desc-btndiv {
-    margin: 0 auto;
-    background-color: #33c1e3;
-    height: 78px;
-    border-radius: 0 0 12px 12px;
-    position: relative;
+.blog-item__content {
+    padding-left: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    @include fira(light);
+    overflow: hidden;
+    p {
+        margin-top: 0;
+        margin-bottom: 5px;
+        text-indent: 20px; 
+    }
 }
- */
+
+.blog-item__time {
+    font-family: 'FontAwesome';
+    padding-left: 20px;
+    font-size: 14px;
+    padding-bottom: 5px;
+
+}
+
+.blog-item__timeline {
+    @include fira();
+    @include inlineblock(middle);
+}
+
+
+
+.blog-item__time_clock-o:before {
+    content: "\f017";
+    color: $blue-btn;
+    @include inlineblock(middle);
+    margin-right: 3px;
+}
+
+.blog-item__title-a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        color: $blue-btn;
+        text-decoration: underline;
+    }
+}
+
+
+ .blog-item_details {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+.blog-item__content_details {
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-size: 18px;
+    @include fira(light);
+    height: auto;
+    overflow: visible;
+}    
+
+.blog-item__snippets {
+    margin: 10px 0;
+    //height: 200px;
+    width: 658px;
+    font-size: 14px;
+}
+
+.blog-item__title_details {
+    padding-bottom: 5px;
+    padding-top: 0;
+}
+
+.scale {
+    height: 350px;
+    width: 350px;
+    float: left;
+    margin-right: 20px;
+    @include fira(light);
+    font-size: 14px;    
+}
+
+.scale_ruler {
+    width: 340px;
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    position: relative;
+    margin-bottom: 5px;
+}
+.scale_ruler-line {
+    height: 5px;
+    background: $blue-btn;
+    &:before {
+        content: "";
+        display: block;
+        height: 15px;
+        width: 5px;
+        background: $blue-btn;
+        position: absolute;
+        left: 0;
+        top: 5px;       
+    }
+    &:after {
+        content: "";
+        display: block;
+        height: 15px;
+        width: 5px;
+        background: $blue-btn;
+        position: absolute;
+        right: 0;
+        top: 5px;  
+    }
+}
+
+.scale_ruler-lefttext {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: $heders-footer;
+    margin-left: 5px;
+}
+
+.scale_ruler-righttext {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: $heders-footer;
+    margin-right: 5px;
+}
+
+
+
+.scale__item {
+    background: $blue-btn;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.scale__item-text {
+    @include fira();
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+
+.scale__header {
+    margin: 0 5px 0 5px;
+    @include fira(bold);
+    font-size: 16px;  
+}
+
+.skills__text {
+    p {
+        @include fira(light);
+        font-size: 18px;
+        color: $col-p;
+        margin-top: 0;
+        margin-bottom: 5px;
+        text-indent: 20px;  
+    }
+}

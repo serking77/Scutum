@@ -11,7 +11,6 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/css/vendor/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/vendor/jquery.scrollbar/jquery.scrollbar.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     
     <!--<script src="/js/vendor/modernizr.js"></script>-->
@@ -63,10 +62,16 @@
                                     <a href="/about.html" class="nav__link nav__link_user-secret"><span class="nav__link-text">Обо мне</span></a>
                                 </li>
                                 <li class="nav__item">
+                                    <a href="/skills.html" class="nav__link nav__link_book"><span class="nav__link-text">Мои навыки</span></a>
+                                </li>
+                                <li class="nav__item">
                                     <a href="/career.html" class="nav__link nav__link_rocket"><span class="nav__link-text">Карьерный путь</span></a>
                                 </li>
                                 <li class="nav__item">
                                     <a href="/portfolio.html" class="nav__link nav__link_briefcase"><span class="nav__link-text">Портфолио</span></a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="/blog.html" class="nav__link nav__link_pensil"><span class="nav__link-text">Блог-note</span></a>
                                 </li>
                             </ul>
                         </nav>
@@ -80,9 +85,20 @@
                                 <div class="career__pic">
                                     <img src="/img/content/career__alma-mater.jpg" alt="" class="career__pic-img">
                                 </div>
+                                <div class="career__sert">
+                                    <h3 class="career__header">
+                                        Сертификаты
+                                    </h3>
+                                    <ul class="career__sert-items">
+                                        <li class="career__sert-item">
+                                            <a href="" class="career__sert-item-a career__sert-item-a_sert" target="_blank"><span class="career__sert-item-text">Loftschool JS</span></a>
+                                            <a href="" class="career__sert-item-a career__sert-item-a_school"><span class="career__sert-item-text_school">(сайт школы)</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="career__right">
-                                <ul class="career__list scrollbar-outer">
+                                <ul class="career__list">
                                     <li class="career__item">
                                         <div class="career__block">
                                             <div class="career__title">
@@ -195,13 +211,6 @@
             </div>
         </div>
     </div>
-    <script src="/js/vendor/jquery/jquery.min.js"></script>
-    <script src="/js/vendor/plugins.js"></script>
-    <script>
-        jQuery(document).ready(function(){
-            jQuery('.scrollbar-outer').scrollbar();
-        });
-    </script>
     <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
     <!-- <script>window.jQuery || document.write('<script src="/js/vendor/jquery.js"><\/script>')</script> -->
     <!-- <script src="/js/vendor/plugins.js"></script> -->
