@@ -4,19 +4,35 @@ body, html {
 	height: 100%;
 }
 
-body {
+html {
     font-size: 16px;
+    
+    @include desktop {
+         font-size: 16px;
+    }
+
+    @include tablets {
+         font-size: 14px;
+    }
+
+    @include phones {
+         font-size: 12px;
+    }
+
+}
+
+body {
     line-height: 1.42;
     -webkit-font-smoothing: antialiased;
     background: $white-bg;
-    
+
 }
 
 .wrapper {
     min-height: 100%;
     overflow: hidden;
     position: relative;
-    min-width: $container-width + 20;
+    //min-width: $container-width + 20;
 }
 
 .wrapper::after{
@@ -27,12 +43,24 @@ body {
 }
 
 .maincontent {
-    padding-bottom: 50px;
+    padding-bottom: rem(50);
 }
 
 .container {
-    width: $container-width;
+    //width: $container-width;
     margin: 0 auto;
+
+    @include desktop {
+         width: 960px;
+    }
+
+    @include tablets {
+         width: 768px;
+    }
+
+    @include phones {
+         width: 320px;
+    }
 }
 
 li {
@@ -48,7 +76,7 @@ ul {
     height: $footer-height;
     width: 100%;
     margin-top: -$footer-height;
-    min-width: $container-width + 20;
+    //min-width: $container-width + 20;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -6,7 +6,7 @@
 
 .footer {
     background: $heders-footer;
-    height: 50px;
+    height: rem(50);
     position: relative;
 }
 
@@ -23,16 +23,16 @@
 
 .copyright {
     @include fira(light);
-    font-size: 14px;
+    font-size: rem(14);
     color: #9c9c9c;
-    line-height: 50px;
+    line-height: rem(50);
 }
 
 .socials {
     font-size: 0;
     text-align: right;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: rem(8);
+    padding-bottom: rem(8);
 }
 
 .socials__item {
@@ -40,9 +40,9 @@
 }
 
 .socials__link {
-   // margin-top: 50px;
-    width: 34px;
-    height: 34px;
+   // margin-top: rem(50);
+    width: rem(34);
+    height: rem(34);
     display: block;
     background-image: url('/img/icons/sprite.png');
     background-repeat: no-repeat;
@@ -51,24 +51,25 @@
 
 
 .socials__link_fb {
-    background-position: 0px 0;
-    margin-right: 7px;
+    background-position: rem(0) 0;
+    margin-right: rem(7);
     &:hover {
-        background-position: -35px 0;
+        background-position: -rem(35) 0;
     }
 }
 
 .socials__link_vk {
-    background-position: -70px 0;
-    margin-right: 7px;
+    background-position: -rem(70) 0;
+    margin-right: rem(7);
     &:hover {
-        background-position: -105px 0;
+        background-position: -rem(105) 0;
     }
 }
 
 .socials__link_tw {
-    background-position: -140px 0;
+    background-position: -rem(140) 0;
     &:hover {
-        background-position: -175px 0;
+        background-position: -rem(175) 0;
     }
 }
+

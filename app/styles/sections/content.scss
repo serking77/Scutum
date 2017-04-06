@@ -5,37 +5,59 @@
 }
 
 .sidebar {
-    width: 220px;
+    width: rem(220);
     float: left;
+    @include tablets {
+        width: 100%;
+        float: none;
+        margin-bottom: rem(35);
+    }
 }
 
 .page-content {
-    width: 700px;
+    width: rem(700);
     float: right;
 }
 
+.nav__item {
+    @include tablets {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+
 .nav__link {
     font-family: 'FontAwesome';
-    font-size: 18px;
+    font-size: rem(18);
     display: block;
-    padding: 10px 24px 10px 0;
-    line-height: 24px;
+    padding: rem(10) rem(24) rem(10) 0;
+    line-height: rem(24);
     text-align: right;
     text-decoration: none;
-    border-right: 6px solid transparent;
+    border-right: rem(6) solid transparent;
     color: $heders-footer;
     &:hover {
         border-color: $blue-btn;
         color: $blue-btn;
+        
+                @include tablets {
+                border: 0 none;
+        }
+
     }
+
+        @include tablets {
+            text-align: left;
+        }
 }
 
 .nav__link-text {
     @include fira();
-    font-size: 18px;
+    font-size: rem(18);
     display: inline-block;
     @include inlineblock(middle);
-    padding-left: 15px;
+    padding-left: rem(15);
 }
 
 .nav__link_user-secret:before {
@@ -63,22 +85,22 @@
 }
 
 .about__left {
-    width: 290px;
+    width: rem(290);
     float: left;
 }
 
 .about__right {
-    width: 404px;
+    width: rem(404);
     float: right;
 }
 
 .about__pic {
     overflow: hidden;
     border-radius: 50%;
-    border: 6px solid #fff;
+    border: rem(6) solid #fff;
     display: inline-block;
-    width: 220px;
-    height: 220px;
+    width: rem(220);
+    height: rem(220);
 }
 
 .about__pic-img {
@@ -89,23 +111,23 @@
 
 .title {
     @include fira(medium);
-    font-size: 35px;
+    font-size: rem(35);
     color: $heders-footer;
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
 }
 
 .about__desc {
-    margin-bottom: 50px;
-    max-height: 500px;
+    margin-bottom: rem(50);
+    max-height: rem(500);
     overflow: hidden;
     p {
         @include fira(light);
-        margin-right: 4px;
-        font-size: 18px;
+        margin-right: rem(4);
+        font-size: rem(18);
         color: $col-p;
         margin-top: 0;
-        margin-bottom: 5px;
-        text-indent: 20px;
+        margin-bottom: rem(5);
+        text-indent: rem(20);
     }
     h2 {}
     h3 {}
@@ -117,21 +139,21 @@
 
 .btn {
     @include fira(bold);
-    font-size: 14px;
-    line-height: 36px;
+    font-size: rem(14);
+    line-height: rem(36);
     color: $red-dnl;
     display: inline-block;
-    border: 2px solid $red-dnl;
-    border-radius: 18px;
+    border: rem(2) solid $red-dnl;
+    border-radius: rem(18);
     text-decoration: none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: rem(10);
+    padding-right: rem(10);
 }
 
 .btn__icon {
     font-family: 'FontAwesome';
     @include inlineblock(middle);
-    padding-right: 16px;
+    padding-right: rem(16);
 }
 
 .btn__icon_download:before {
@@ -144,15 +166,15 @@
 
 .btn_white {
     @include fira(bold);
-    font-size: 14px;
-    line-height: 36px;
+    font-size: rem(14);
+    line-height: rem(36);
     color: #fff;
     display: inline-block;
-    border: 2px solid #fff;
-    border-radius: 18px;
+    border: rem(2) solid #fff;
+    border-radius: rem(18);
     text-decoration: none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: rem(10);
+    padding-right: rem(10);
 }
 
 .btn_white .btn__text {
@@ -164,21 +186,21 @@
 }
 
 .career__left {
-    width: 220px;
+    width: rem(220);
     float: left;
 }
 
 .career__right {
-    width: 460px;
+    width: rem(460);
     float: right;
 }
 
 .career__pic {
     overflow: hidden;
-    border-radius: 9px;
+    border-radius: rem(9);
     display: inline-block;
-    width: 220px;
-    height: 220px;
+    width: rem(220);
+    height: rem(220);
 }
 
 .career__pic-img {
@@ -189,7 +211,7 @@
 
 .career__list {
     @include fira(light);
-    font-size: 18px;
+    font-size: rem(18);
     &:first-child {
         .career__block {
             &:before {
@@ -208,8 +230,8 @@
 
 .career__item {
     text-align: right;
-    margin-bottom: 20px;
-    margin-right: 4px;
+    margin-bottom: rem(20);
+    margin-right: rem(4);
     &:hover {
         .career__block {
             background-color: $blue-btn;
@@ -217,93 +239,93 @@
         }
         .career__year {
             @include fira(bold);
-            font-size: 18px;
+            font-size: rem(18);
             color: $blue-btn;
             &:after {
-                border: 5px solid #94e0f2;
-                right: -21px;
-                margin-top: -10px;
+                border: rem(5) solid #94e0f2;
+                right: -rem(21);
+                margin-top: -rem(10);
             }
         }
     }
 }
 
 .career__block {
-    width: 350px;
-    border-radius: 9px;
-    box-shadow: 0 1px 3px 0 rgba(#000, .2);
+    width: rem(350);
+    border-radius: rem(9);
+    box-shadow: 0 rem(1) rem(3) 0 rgba(#000, .2);
     background-color: #fff;
     display: inline-block;
     position: relative;
     text-align: left;
-    padding: 14px 0 14px 21px;
+    padding: rem(14) 0 rem(14) rem(21);
     &:before,
     &:after {
         content: "";
         display: block;
-        width: 1px;
+        width: rem(1);
         background: #dddddd;
         position: absolute;
-        left: -25px;
+        left: -rem(25);
     }
     &:before {
         top: 0;
         bottom: 50%;
-        margin-bottom: 10px;
+        margin-bottom: rem(10);
     }
     &:after {
-        bottom: -22px;
+        bottom: -rem(22);
         top: 50%;
-        margin-top: 10px;
+        margin-top: rem(10);
     }
 }
 
 .career__title {
     @include fira();
-    font-size: 21px;
+    font-size: rem(21);
 }
 
 .career__year {
     @include fira();
-    font-size: 14px;
+    font-size: rem(14);
     color: #727272;
     position: absolute;
     right: 100%;
     top: 50%;
-    line-height: 30px;
-    margin-top: -15px;
-    margin-right: 35px;
+    line-height: rem(30);
+    margin-top: -rem(15);
+    margin-right: rem(35);
     &:after {
         content: "";
-        width: 10px;
-        height: 10px;
+        width: rem(10);
+        height: rem(10);
         background: $blue-btn;
         border-radius: 50%;
         position: absolute;
-        right: -16px;
+        right: -rem(16);
         top: 50%;
-        margin-top: -5px;
+        margin-top: -rem(5);
         z-index: 1;
     }
 }
 
 .career__sert {
-    padding-top: 20px;
+    padding-top: rem(20);
 }
 
 .career__header {
     @include fira();
-    font-size: 18px;
-    margin-bottom: 5px;
-    padding-left: 10px;
+    font-size: rem(18);
+    margin-bottom: rem(5);
+    padding-left: rem(10);
 }
 
 .career__sert-item-a {
     font-family: 'FontAwesome';
-    font-size: 18px;
+    font-size: rem(18);
     display: inline-block;
-    padding: 10px 0px 10px 10px;
-    line-height: 24px;
+    padding: rem(10) rem(0) rem(10) rem(10);
+    line-height: rem(24);
     text-align: left;
     text-decoration: none;
     color: $heders-footer;
@@ -313,10 +335,10 @@
 }
 
 .career__sert-item-a_school {
-    font-size: 14px;
+    font-size: rem(14);
     display: inline-block;
     padding: 0;
-    line-height: 16px;
+    line-height: rem(16);
     text-align: none;
     text-decoration: underline;
     color: $heders-footer;
@@ -333,15 +355,15 @@
 .career__sert-item-text {
     //background: $blue-btn;
     @include fira();
-    font-size: 16px;
-    padding: 5px;
+    font-size: rem(16);
+    padding: rem(5);
 }
 
 .career__sert-item-text_school {
     //background: $blue-btn;
     @include fira();
-    font-size: 12px;
-    padding: 0px;
+    font-size: rem(12);
+    padding: rem(0);
 }
 
 .career__sert-item-a_sert:before {
@@ -357,48 +379,48 @@
 
 .portfolio__item {
     @include inlineblock(middle);
-    margin-bottom: 16px;
-    margin-left: 4px;
-    margin-right: 4px;
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: rem(16);
+    margin-left: rem(4);
+    margin-right: rem(4);
+    border-radius: rem(10);
+    box-shadow: rem(0) rem(1) rem(3) rem(0) rgba(0, 0, 0, 0.2);
 }
 
 .portfolio__item:nth-child(3n) {
-    margin-right: 4px;
+    margin-right: rem(4);
 }
 
 .portfolio__item-img {
-    border-radius: 10px 10px 0 0;
+    border-radius: rem(10) rem(10) 0 0;
     max-height: 100%;
     max-width: 100%;
 }
 
 .portfolio__item-desc-title {
-    font-size: 21px;
+    font-size: rem(21);
     @include fira();
     color: $blue-btn;
-    padding: 17px 0 0 19px;
+    padding: rem(17) 0 0 rem(19);
 }
 
 .portfolio__item-desc-desc {
     @include fira(light);
-    font-size: 14px;
-    padding: 0px 0 10px 19px;
+    font-size: rem(14);
+    padding: rem(0) 0 rem(10) rem(19);
     color: $heders-footer;
 }
 
 .portfolio__item-desc-app {
     @include fira(bold);
-    font-size: 14px;
-    padding: 0px 0 10px 19px;
+    font-size: rem(14);
+    padding: rem(0) 0 rem(10) rem(19);
     color: #aeaeae;
     @include inlineblock(middle);
     &:before {
         font-family: 'FontAwesome';
         content: "\f108";
         @include inlineblock(middle);
-        margin-right: 5px;
+        margin-right: rem(5);
     }
 }
 
@@ -410,9 +432,9 @@
 
 .title-portfolio-year {
     @include fira();
-    font-size: 21px;
+    font-size: rem(21);
     color: $heders-footer;
-    margin-bottom: 5px;
+    margin-bottom: rem(5);
 }
 
 .wrapper_auth {
@@ -435,95 +457,95 @@
 
 .auth {
     display: inline-block;
-    width: 300px;
-    height: 302px;
+    width: rem(300);
+    height: rem(302);
     vertical-align: middle;
 }
 
 .auth__photo {
-    width: 300px;
-    height: 140px;
+    width: rem(300);
+    height: rem(140);
     position: absolute;
     z-index: 5000;
 }
 
 .auth__photo-img {
-    height: 140px;
-    width: 140px;
+    height: rem(140);
+    width: rem(140);
     background-image: url('/img/content/user__auth.jpg');
     border-radius: 50%;
-    border: 1px solid #bebebe;
+    border: rem(1) solid #bebebe;
     margin: 0 auto;
 }
 
 .auth__desc {
-    width: 300px;
-    height: 232px;
+    width: rem(300);
+    height: rem(232);
     background-color: #fff;
-    margin-top: 302-232px;
-    border-radius: 12px;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    margin-top: 302-rem(232);
+    border-radius: rem(12);
+    box-shadow: rem(0) rem(1) rem(2) rem(0) rgba(0, 0, 0, 0.3);
 }
 
 .auth__desc-name {
-    padding-top: 90px;
-    padding-bottom: 35px;
+    padding-top: rem(90);
+    padding-bottom: rem(35);
 }
 
 .auth__desc-name-text {
-    width: 140px;
-    height: 44px;
+    width: rem(140);
+    height: rem(44);
     @include fira(bold);
-    font-size: 21px;
+    font-size: rem(21);
     color: $heders-footer;
 }
 
 .auth__desc-btn {
     background: $blue-btn;
-    width: 300px;
-    height: 78px;
-    border-radius: 0 0 12px 12px;
+    width: rem(300);
+    height: rem(78);
+    border-radius: 0 0 rem(12) rem(12);
 }
 
 .auth__desc-btn-div {
-    padding-top: 20px;
+    padding-top: rem(20);
 }
 
 
 .blog-item {
     background: #e9e8e8;
-    border-radius: 10px;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
-    //width: 700px;
-    margin-bottom: 20px;
+    border-radius: rem(10);
+    box-shadow: rem(0) rem(1) rem(3) rem(0) rgba(0, 0, 0, 0.2);
+    //width: rem(700);
+    margin-bottom: rem(20);
 }
 
 .blog-item__title {
-    padding-top: 10px;
-    padding-left: 20px;
+    padding-top: rem(10);
+    padding-left: rem(20);
     margin-bottom: 0;
-    font-size: 21px;
+    font-size: rem(21);
     @include fira();
 }
 
 .blog-item__content {
-    padding-left: 20px;
-    margin-bottom: 5px;
-    font-size: 18px;
+    padding-left: rem(20);
+    margin-bottom: rem(5);
+    font-size: rem(18);
     @include fira(light);
     overflow: hidden;
     p {
         margin-top: 0;
-        margin-bottom: 5px;
-        text-indent: 20px; 
+        margin-bottom: rem(5);
+        text-indent: rem(20); 
     }
 }
 
 .blog-item__time {
     font-family: 'FontAwesome';
-    padding-left: 20px;
-    font-size: 14px;
-    padding-bottom: 5px;
+    padding-left: rem(20);
+    font-size: rem(14);
+    padding-bottom: rem(5);
 
 }
 
@@ -538,7 +560,7 @@
     content: "\f017";
     color: $blue-btn;
     @include inlineblock(middle);
-    margin-right: 3px;
+    margin-right: rem(3);
 }
 
 .blog-item__title-a {
@@ -552,119 +574,119 @@
 
 
  .blog-item_details {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: rem(20);
+    padding-bottom: rem(20);
     margin-bottom: 0;
 }
 
 .blog-item__content_details {
-    padding-left: 20px;
+    padding-left: rem(20);
     margin-bottom: 0;
-    font-size: 18px;
+    font-size: rem(18);
     @include fira(light);
     height: auto;
     overflow: visible;
 }    
 
 .blog-item__snippets {
-    margin: 10px 0;
-    //height: 200px;
-    width: 658px;
-    font-size: 14px;
+    margin: rem(10) 0;
+    //height: rem(200);
+    width: rem(658);
+    font-size: rem(14);
 }
 
 .blog-item__title_details {
-    padding-bottom: 5px;
+    padding-bottom: rem(5);
     padding-top: 0;
 }
 
 .scale {
-    height: 350px;
-    width: 350px;
+    height: rem(350);
+    width: rem(350);
     float: left;
-    margin-right: 20px;
+    margin-right: rem(20);
     @include fira(light);
-    font-size: 14px;    
+    font-size: rem(14);    
 }
 
 .scale_ruler {
-    width: 340px;
-    height: 20px;
-    margin-top: 10px;
-    margin-left: 5px;
+    width: rem(340);
+    height: rem(20);
+    margin-top: rem(10);
+    margin-left: rem(5);
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: rem(5);
 }
 .scale_ruler-line {
-    height: 5px;
+    height: rem(5);
     background: $blue-btn;
     &:before {
         content: "";
         display: block;
-        height: 15px;
-        width: 5px;
+        height: rem(15);
+        width: rem(5);
         background: $blue-btn;
         position: absolute;
         left: 0;
-        top: 5px;       
+        top: rem(5);       
     }
     &:after {
         content: "";
         display: block;
-        height: 15px;
-        width: 5px;
+        height: rem(15);
+        width: rem(5);
         background: $blue-btn;
         position: absolute;
         right: 0;
-        top: 5px;  
+        top: rem(5);  
     }
 }
 
 .scale_ruler-lefttext {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: rem(5);
+    left: rem(5);
     color: $heders-footer;
-    margin-left: 5px;
+    margin-left: rem(5);
 }
 
 .scale_ruler-righttext {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: rem(5);
+    right: rem(5);
     color: $heders-footer;
-    margin-right: 5px;
+    margin-right: rem(5);
 }
 
 
 
 .scale__item {
     background: $blue-btn;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: 5px;
+    margin-right: rem(5);
+    margin-left: rem(5);
+    margin-bottom: rem(5);
 }
 
 .scale__item-text {
     @include fira();
-    font-size: 14px;
-    padding-left: 5px;
+    font-size: rem(14);
+    padding-left: rem(5);
 }
 
 
 .scale__header {
-    margin: 0 5px 0 5px;
+    margin: 0 rem(5) 0 rem(5);
     @include fira(bold);
-    font-size: 16px;  
+    font-size: rem(16);  
 }
 
 .skills__text {
     p {
         @include fira(light);
-        font-size: 18px;
+        font-size: rem(18);
         color: $col-p;
         margin-top: 0;
-        margin-bottom: 5px;
-        text-indent: 20px;  
+        margin-bottom: rem(5);
+        text-indent: rem(20);  
     }
 }
