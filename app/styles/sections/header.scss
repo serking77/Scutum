@@ -1,6 +1,12 @@
 .header {
     .container {
         @extend %clearfix;
+
+         @include tablets {
+         box-sizing: border-box;
+         padding-left: rem(5);
+         padding-right: rem(5);
+         }
     }
 }
 
@@ -41,6 +47,11 @@
     @include fira();
     @include inlineblock(middle);
     padding-left: rem(20);
+        @include tablets {
+        font-size: rem(14);
+        width: rem(50);
+
+    }
 }
 
 .contacts {
@@ -51,8 +62,16 @@
         .contacts__dropdown {
             left: 55.32%;
             opacity: 1;
+
+            @include tablets {
+                left: 21.32%;
+            }
+
         }
     }
+        @include phones {
+            display: none;
+        }
 }
 
 .contacts__link {
@@ -73,7 +92,7 @@
     text-align: left;
     position: absolute;
     //left: 55.32%;
-    left: -rem(9999);
+    left: - rem(9999);
     top: 93.75%;
     z-index: 999;
     opacity: 0;
@@ -138,7 +157,11 @@
     position: absolute;
     bottom: 100%;
     left: 50%;
-    margin-left: -rem(20);
+    margin-left: - rem(20);
+
+    @include tablets {
+        left: 75%;
+    }
 
     &::after {
         content: "";
@@ -148,6 +171,20 @@
         border-bottom-color: white;
         position: absolute;
         top: rem(1);
-        left: -rem(20);
+        left: - rem(20);
     }
+}
+
+.contacts__a-telbig {
+    display: none;
+    &:before {
+       content: "\f095";
+       font-family: 'FontAwesome';
+       font-size: rem(48);
+       line-height: rem(80);
+       color: $blue-btn; 
+    }
+        @include phones {
+            display: inline-block;
+        }
 }
