@@ -1,38 +1,56 @@
 /* adjustment_and_layout */
+html {
+    font-size: 16px;
+}
 body, html {
 	width: 100%;
 	height: 100%;
 }
 
 body {
-    font-size: 16px;
     line-height: 1.42;
     -webkit-font-smoothing: antialiased;
     background: $white-bg;
-    
+
 }
 
 .wrapper {
     min-height: 100%;
     overflow: hidden;
     position: relative;
-    min-width: $container-width + 20;
+/*     max-width: rem(960);
+   
+ @include tablets {
+max-width: rem(788);
+}
+
+@include phones {
+max-width: rem(340);
+}  */
 }
 
 .wrapper::after{
     content: "";
     display: block;
-    height: $footer-height;
+    height: rem(50);
     overflow: hidden;
 }
 
 .maincontent {
-    padding-bottom: 50px;
+    padding-bottom: rem(50);
 }
 
 .container {
-    width: $container-width;
+    max-width: rem(940);
     margin: 0 auto;
+
+    @include tablets {
+         max-width: rem(768);
+    }
+
+    @include phones {
+         max-width: rem(320);
+    }
 }
 
 li {
@@ -45,10 +63,9 @@ ul {
 }
 
 .footer {
-    height: $footer-height;
+    min-height: 50px;
     width: 100%;
-    margin-top: -$footer-height;
-    min-width: $container-width + 20;
+    margin-top: -50px;
 }
 
 h1, h2, h3, h4, h5, h6 {
