@@ -73,7 +73,7 @@
     @include inlineblock(middle);
     padding-left: rem(15);
         @include phones {
-            font-size: rem(14);
+            font-size: rem(16);
     }
 }
 
@@ -169,6 +169,9 @@
         @include phones {
            max-height: none;   
     }
+        @include tablets {
+           max-height: none;         
+    }
     p {
         @include fira(light);
         margin-right: rem(4);
@@ -237,11 +240,20 @@
 .career__left {
     width: rem(220);
     float: left;
+    @include phones {
+        float: none;
+        margin: 0 auto;
+    }
 }
 
 .career__right {
     width: rem(460);
     float: right;
+    @include phones {
+        float: none;
+        margin: 0 auto;
+        width: auto;
+    }
 }
 
 .career__pic {
@@ -261,19 +273,8 @@
 .career__list {
     @include fira(light);
     font-size: rem(18);
-    &:first-child {
-        .career__block {
-            &:before {
-                display: none;
-            }
-        }
-    }
-    &:last-child {
-        .career__block {
-            &::after {
-                display: none;
-            }
-        }
+    @include phones {
+        font-size: rem(14);        
     }
 }
 
@@ -292,8 +293,23 @@
             color: $blue-btn;
             &:after {
                 border: rem(5) solid #94e0f2;
-                right: -rem(21);
-                margin-top: -rem(10);
+                right: - rem(21);
+                margin-top: - rem(10);
+            }
+        }
+    }
+    &:first-child {
+        .career__block {
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    &:last-child {
+        .career__block {
+            &::after {
+                display: none;
             }
         }
     }
@@ -312,26 +328,37 @@
     &:after {
         content: "";
         display: block;
-        width: rem(1);
+        width: 1px;
         background: #dddddd;
         position: absolute;
-        left: -rem(25);
+        left: -25px;
+        @include phones {
+            display: none;
+        }
+
     }
     &:before {
         top: 0;
         bottom: 50%;
-        margin-bottom: rem(10);
+        margin-bottom: 10px;
     }
     &:after {
-        bottom: -rem(22);
+        bottom: - rem(22);
         top: 50%;
         margin-top: rem(10);
+    }
+    @include phones {
+        display: block; 
+        width: auto;
     }
 }
 
 .career__title {
     @include fira();
     font-size: rem(21);
+    @include phones {
+        font-size: rem(14);
+    }
 }
 
 .career__year {
@@ -342,7 +369,7 @@
     right: 100%;
     top: 50%;
     line-height: rem(30);
-    margin-top: -rem(15);
+    margin-top: - rem(15);
     margin-right: rem(35);
     &:after {
         content: "";
@@ -353,8 +380,11 @@
         position: absolute;
         right: - rem(16);
         top: 50%;
-        margin-top: -rem(5);
+        margin-top: - rem(5);
         z-index: 1;
+    }
+    @include phones {
+        display: none;
     }
 }
 
@@ -433,10 +463,19 @@
     margin-right: rem(4);
     border-radius: rem(10);
     box-shadow: rem(0) rem(1) rem(3) rem(0) rgba(0, 0, 0, 0.2);
+    @include phones {
+        display: block;
+        width: rem(220);
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
 }
 
 .portfolio__item:nth-child(3n) {
     margin-right: rem(4);
+        @include phones {
+        margin-right: auto;
+    }
 }
 
 .portfolio__item-img {
@@ -484,6 +523,9 @@
     font-size: rem(21);
     color: $heders-footer;
     margin-bottom: rem(5);
+    @include phones {
+        text-align: center;        
+    }
 }
 
 .wrapper_auth {
@@ -640,7 +682,9 @@
 .blog-item__snippets {
     margin: rem(10) 0;
     //height: rem(200);
-    width: rem(658);
+    //width: rem(658);
+    width: auto;
+    padding-right: 20px;
     font-size: rem(14);
 }
 
