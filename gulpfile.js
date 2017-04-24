@@ -18,6 +18,19 @@ gulp.task('default', ['clean'], function() {
 gulp.task('production', ['clean'], function() {
 	gulp.run('build');
 });
+
+//Jekyll
+gulp.task('jekyll', ['clean', 'build'], function() {
+	 gulp.src(['build/{css,js,fonts,img}/**/*.*', 'build/!(*.html)'])
+        .pipe(gulp.dest('jekyll/'));
+});
+
+//Jekyll
+//gulp.task('jekyll', ['production'], function() {
+//	 gulp.src(['build/{css,js,fonts,img}/**/*.*', 'build/!(*.html)'])
+//        .pipe(gulp.dest('jekyll/'));
+//});
+
 // Задача 'dev' представляется собой сборку в режиме разработки.
 // Запускает build - сборку, watcher - слежку за файлами и browser-sync.
 gulp.task('dev', ['build', 'watch', 'browser-sync']);
@@ -60,7 +73,6 @@ gulp.task('clean', function() {
 	return gulp.src('build/')
 		.pipe(clean());
 })
-
 
 /**********Работа со скриптами*****************/
 
@@ -108,39 +120,3 @@ gulp.task('assets:js', function() {
         .pipe(gulp.dest('build/js/vendor/'));
 });
 
-
-
-
-
-
-
-//'app/js/vendor/**/*.*'
-
-
-/**********Работа с вендорными скриптами*****************/
-
-/*gulp.task('copy-vendor', [
-	'copy:normalize',
-    'copy:jquery',
-    'copy:modernizr',
-    'copy:img:plugins'
-]);
-
-gulp.task('copy:normalize', function() {
-    gulp.src('node_modules/normalize.css/normalize.css')
-        .pipe(gulp.dest('build/css/'));
-});
-
-gulp.task('copy:jquery', function() {
-    gulp.src('node_modules/jquery/dist/jquery.js')
-        .pipe(gulp.dest('build/js/vendor'));
-});
-gulp.task('copy:modernizr', function() {
-    gulp.src('node_modules/modernizr/modernizr.js')
-        .pipe(gulp.dest('build/js/vendor'));
-});
-gulp.task('copy:img:plugins', function() {
-    gulp.src('app/js/vendor/plugins.js')
-        .pipe(gulp.dest('build/js/vendor'));
-});
-*/
